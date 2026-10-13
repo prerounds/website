@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PreRounds | The study room for future doctors</title>
-<meta name="description" content="Virtual on-camera study rooms for future doctors. Quiet floors, drop-in tables, and booked rooms, matched by schedule, format, and stage. Join the waitlist.">
+<meta name="description" content="Free virtual study rooms for future doctors. Study on camera, matched by schedule, format, stage, and gender preference. No card required.">
 <meta name="theme-color" content="#2B2340">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -26,7 +26,7 @@
 <header class="site-header">
   <div class="wrap header-row">
     <a href="/" class="brand" aria-label="PreRounds home"><img src="/logo.svg" alt="PreRounds" width="168" height="42"></a>
-    <a href="#join" class="btn btn-small">Join the waitlist</a>
+    <a href="#build" class="btn btn-small">Join free</a>
   </div>
 </header>
 
@@ -35,7 +35,12 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>The study room for future doctors.</h1>
-        <p class="lede">A virtual study room where future physicians work together on camera, from wherever they are. Pick a quiet floor, sit at a drop-in table, or book a room, and get matched by schedule, format, and stage.</p>
+        <p class="lede">A virtual study room where future physicians work together on camera, from wherever they are. Pick a floor or book a room, and get matched to how you study.</p>
+        <ul class="perks" aria-label="Highlights">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>100% free</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No card required, ever</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Same-gender matching available</li>
+        </ul>
         <form class="waitlist" data-source="hero" novalidate>
           <div class="field-row">
             <label class="visually-hidden" for="hero-email">Email</label>
@@ -51,9 +56,9 @@
               <option value="other">Other</option>
             </select>
             <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button class="btn" type="submit">Join the waitlist</button>
+            <button class="btn" type="submit">Join free</button>
           </div>
-          <p class="form-note" role="status" aria-live="polite">Free to use. Waitlist members get first access.</p>
+          <p class="form-note" role="status" aria-live="polite">Just your email. We never ask for payment information.</p>
         </form>
       </div>
 
@@ -82,6 +87,81 @@
     </div>
   </section>
 
+
+  <section class="builder" id="build" aria-labelledby="build-title">
+    <div class="wrap builder-grid">
+      <div class="builder-controls">
+        <h2 id="build-title">Set it up the way you study.</h2>
+        <p class="builder-intro">Choose your preferences and save your spot. When PreRounds opens, you'll be matched using exactly these settings.</p>
+
+        <fieldset class="pref">
+          <legend>Noise level</legend>
+          <div class="chips">
+            <label><input type="radio" name="noise" value="Quiet floor" checked><span>Silent</span></label>
+            <label><input type="radio" name="noise" value="Collaborative floor"><span>Some chat</span></label>
+            <label><input type="radio" name="noise" value="Social floor"><span>Social on breaks</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="pref">
+          <legend>Format</legend>
+          <div class="chips">
+            <label><input type="radio" name="format" value="1-on-1 partner" checked><span>1-on-1</span></label>
+            <label><input type="radio" name="format" value="Pod of 2–4"><span>Pod of 2–4</span></label>
+            <label><input type="radio" name="format" value="Group of 5–6"><span>Group of 5–6</span></label>
+            <label><input type="radio" name="format" value="Drop-in tables"><span>Drop-in tables</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="pref">
+          <legend>When you study <span class="hint">Pick any</span></legend>
+          <div class="chips">
+            <label><input type="checkbox" name="hours" value="Early morning"><span>Early morning</span></label>
+            <label><input type="checkbox" name="hours" value="Daytime"><span>Daytime</span></label>
+            <label><input type="checkbox" name="hours" value="Evening" checked><span>Evening</span></label>
+            <label><input type="checkbox" name="hours" value="Late night"><span>Late night</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="pref pref-feature">
+          <legend>Who you're matched with</legend>
+          <p class="pref-desc">Women can choose to study only with women, and men only with men. Your choice is private and applies to every session.</p>
+          <div class="chips">
+            <label><input type="radio" name="match" value="Anyone" checked><span>Anyone</span></label>
+            <label><input type="radio" name="match" value="Same gender only"><span>Same gender only</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <aside class="ticket" aria-label="Your study room">
+        <p class="ticket-label">Your study room</p>
+        <dl class="ticket-rows">
+          <div><dt>Floor</dt><dd data-out="noise">Quiet floor</dd></div>
+          <div><dt>Format</dt><dd data-out="format">1-on-1 partner</dd></div>
+          <div><dt>Hours</dt><dd data-out="hours">Evening</dd></div>
+          <div><dt>Matched with</dt><dd data-out="match">Anyone</dd></div>
+        </dl>
+        <form class="waitlist waitlist-ticket" data-source="builder" data-prefs novalidate>
+          <label class="visually-hidden" for="build-email">Email</label>
+          <input id="build-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
+          <label class="visually-hidden" for="build-stage">Your stage</label>
+          <select id="build-stage" name="stage" required>
+            <option value="" selected disabled>Your stage</option>
+            <option value="undergrad">Undergraduate</option>
+            <option value="postbacc">Post-bacc</option>
+            <option value="grad">Master's or graduate program</option>
+            <option value="gap_year">Gap year</option>
+            <option value="applying">Applying to medical school</option>
+            <option value="other">Other</option>
+          </select>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-light" type="submit">Save my spot, free</button>
+          <p class="form-note" role="status" aria-live="polite">No card. No fees. Just your email.</p>
+        </form>
+      </aside>
+    </div>
+  </section>
+
   <section class="band" aria-labelledby="how">
     <div class="wrap">
       <h2 id="how">How a session works</h2>
@@ -106,32 +186,23 @@
     </div>
   </section>
 
-  <section class="split" aria-labelledby="matching">
-    <div class="wrap split-grid">
-      <div>
-        <h2 id="matching">Matched to how you study</h2>
-        <p>Studying well with someone depends on more than a shared subject. PreRounds pairs you on the details that decide whether a session works.</p>
-      </div>
-      <dl class="criteria">
-        <div><dt>Schedule</dt><dd>Sessions at the hours you actually study.</dd></div>
-        <div><dt>Format</dt><dd>One partner, a small pod, or a larger group.</dd></div>
-        <div><dt>Social level</dt><dd>Silent, some conversation, or social between blocks.</dd></div>
-        <div><dt>Stage</dt><dd>People at a similar point, from first-year biology to application season.</dd></div>
-        <div><dt>Same-gender option</dt><dd>Choose to be matched only with partners of your own gender.</dd></div>
-      </dl>
-    </div>
-  </section>
 
-  <section class="split split-alt" aria-labelledby="reliability">
-    <div class="wrap split-grid">
-      <div>
-        <h2 id="reliability">Reliability instead of penalties</h2>
-        <p>There are no cancellation fees. Each member builds a reliability score by showing up to booked sessions, so partners know who they can count on.</p>
-      </div>
-      <div class="score" aria-hidden="true">
-        <div class="score-ring"><span>96%</span></div>
-        <p>Sessions attended as booked</p>
-        <p class="score-caption">Example reliability score</p>
+  <section class="free" aria-labelledby="free-title">
+    <div class="wrap">
+      <h2 id="free-title">Free. No card. No catch.</h2>
+      <div class="free-grid">
+        <div>
+          <h3>Nothing to pay</h3>
+          <p>Study rooms, matching, check-ins, and tracking are free for students. There is no paid tier to unlock.</p>
+        </div>
+        <div>
+          <h3>No card to join</h3>
+          <p>Signing up takes your email and nothing else. We never ask for a credit card or payment details.</p>
+        </div>
+        <div>
+          <h3>No cancellation fees</h3>
+          <p>Miss a session and nothing is charged. A reliability score for showing up keeps everyone accountable instead.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -152,10 +223,21 @@
     </div>
   </section>
 
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="wrap"><div class="faq-inner">
+      <h2 id="faq-title">Questions</h2>
+      <details><summary>Is PreRounds really free?</summary><p>Yes. Joining the waitlist and using the study rooms are free for students, with no trial period and no paid upgrade.</p></details>
+      <details><summary>Do I need a credit card?</summary><p>No. We only ask for your email and where you are in your path to medicine. We never collect payment information.</p></details>
+      <details><summary>Can I be matched only with my own gender?</summary><p>Yes. Choose "Same gender only" and you'll only be paired with partners of your own gender, in every room and pod.</p></details>
+      <details><summary>Do I have to be on camera?</summary><p>Cameras stay on during sessions because seeing others at work is what keeps everyone focused. Microphones stay off on the quiet floor.</p></details>
+      <details><summary>When does it open?</summary><p>PreRounds is opening in stages. Waitlist members get access first, and we'll email you when your spot is ready.</p></details>
+    </div></div>
+  </section>
+
   <section class="join" id="join" aria-labelledby="join-title">
     <div class="wrap"><div class="join-inner">
-      <h2 id="join-title">Get early access</h2>
-      <p>PreRounds is opening in stages. Join the waitlist and we'll email you when your spot is ready.</p>
+      <h2 id="join-title">Get early access, free</h2>
+      <p>PreRounds is opening in stages. Join the waitlist and we'll email you when your spot is ready. No card required.</p>
       <form class="waitlist waitlist-full" data-source="footer" novalidate>
         <div class="field">
           <label for="join-name">First name</label>
@@ -178,7 +260,7 @@
           </select>
         </div>
         <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="btn btn-light" type="submit">Join the waitlist</button>
+        <button class="btn btn-light" type="submit">Join free</button>
         <p class="form-note" role="status" aria-live="polite">We only use your email to contact you about PreRounds.</p>
       </form>
     </div></div>
