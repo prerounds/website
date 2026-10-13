@@ -4,6 +4,12 @@ const SUPABASE_KEY = "sb_publishable_Oj-bEfguqOrt-5N-9pILLw_jhTFdI2r"; // public
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
+// Remember which ad or link brought the visitor (e.g. ?utm_source=instagram&utm_campaign=launch).
+const params = new URLSearchParams(location.search);
+const clean = (v) => (v || "").replace(/[^\w.-]/g, "").slice(0, 40);
+const campaign = [clean(params.get("utm_source")), clean(params.get("utm_campaign")), clean(params.get("utm_content"))]
+  .filter(Boolean).join("/");
+
 function setNote(form, text, kind) {
   const note = form.querySelector(".form-note");
   note.textContent = text;
@@ -38,7 +44,8 @@ document.querySelectorAll("form.waitlist").forEach((form) => {
       return;
     }
 
-    const body = { email: emailValue, stage: stage.value, source: form.dataset.source || "site" };
+    const where = form.dataset.source || "site";
+    const body = { email: emailValue, stage: stage.value, source: (campaign ? `${campaign}|${where}` : where).slice(0, 100) };
     if (name && name.value.trim()) body.first_name = name.value.trim().slice(0, 80);
 
     button.disabled = true;
