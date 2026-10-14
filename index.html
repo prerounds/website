@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PreRounds | The study room for future doctors</title>
-<meta name="description" content="Virtual on-camera study rooms for future doctors. Quiet floors, drop-in tables, and booked rooms, matched by schedule, format, and stage. Join the waitlist.">
+<meta name="description" content="Free virtual study rooms for future doctors. Study on camera, matched by schedule, format, stage, and gender preference. No card required.">
 <meta name="theme-color" content="#2B2340">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -17,8 +17,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -26,7 +27,7 @@
 <header class="site-header">
   <div class="wrap header-row">
     <a href="/" class="brand" aria-label="PreRounds home"><img src="/logo.svg" alt="PreRounds" width="168" height="42"></a>
-    <a href="#join" class="btn btn-small">Join the waitlist</a>
+    <a href="#build" class="btn btn-small">Join free</a>
   </div>
 </header>
 
@@ -34,8 +35,15 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
+        <p class="launch-pill"><span class="dot" aria-hidden="true"></span>Founding beta opens December 2026</p>
         <h1>The study room for future doctors.</h1>
-        <p class="lede">A virtual study room where future physicians work together on camera, from wherever they are. Pick a quiet floor, sit at a drop-in table, or book a room, and get matched by schedule, format, and stage.</p>
+        <p class="lede">A virtual study room where future physicians work together on camera, from wherever they are. Pick a floor or book a room, and get matched to how you study.</p>
+        <ul class="perks" aria-label="Highlights">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>100% free</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No card, ever</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Built around how you study</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><a href="#who">Lead &amp; build your network</a></li>
+        </ul>
         <form class="waitlist" data-source="hero" novalidate>
           <div class="field-row">
             <label class="visually-hidden" for="hero-email">Email</label>
@@ -51,13 +59,115 @@
               <option value="other">Other</option>
             </select>
             <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button class="btn" type="submit">Join the waitlist</button>
+            <button class="btn" type="submit">Join free</button>
           </div>
-          <p class="form-note" role="status" aria-live="polite">Free to use. Waitlist members get first access.</p>
+          <p class="form-note" role="status" aria-live="polite">Just your email. We never ask for payment information.</p>
         </form>
+        <ul class="trust" aria-label="About PreRounds">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>Independent &amp; student-led</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 1 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Founded 2026 in Baltimore</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg>Your data is never sold</li>
+        </ul>
       </div>
 
-      <aside class="directory" aria-label="Floor directory">
+      <figure class="room room-hero" aria-label="Illustrated preview of a PreRounds study room">
+        <div class="room-bar">
+          <span class="room-name"><i></i>Quiet floor · Table 4</span>
+          <span class="room-timer" data-tick="2538">42:18 left</span>
+        </div>
+        <div class="room-grid" aria-hidden="true">
+          <div class="cam"><span class="av" style="--c:#F86E87"></span><span class="nm">You</span></div>
+          <div class="cam"><span class="av" style="--c:#B36CD6"></span><span class="nm">Maya</span></div>
+          <div class="cam"><span class="av" style="--c:#8AACEB"></span><span class="nm">Sara</span></div>
+          <div class="cam"><span class="av" style="--c:#E7A6C8"></span><span class="nm">Noor</span></div>
+        </div>
+        <div class="room-goal" aria-hidden="true"><span class="side-title">Today's goal</span><span class="goal-text">Finish 2 CARS passages</span><span class="goal-check">Done</span></div>
+        <figcaption>Illustrated preview of a study room</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section class="builder" id="build" aria-labelledby="build-title">
+    <div class="wrap builder-grid">
+      <div class="builder-controls">
+        <h2 id="build-title">Set it up the way you study.</h2>
+        <p class="builder-intro">Choose your preferences and save your spot. When PreRounds opens, you'll be matched using exactly these settings.</p>
+
+        <fieldset class="pref">
+          <legend>Noise level</legend>
+          <div class="chips">
+            <label><input type="radio" name="noise" value="Quiet floor" checked><span>Silent</span></label>
+            <label><input type="radio" name="noise" value="Collaborative floor"><span>Some chat</span></label>
+            <label><input type="radio" name="noise" value="Social floor"><span>Social on breaks</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="pref">
+          <legend>Format</legend>
+          <div class="chips">
+            <label><input type="radio" name="format" value="1-on-1 partner" checked><span>1-on-1</span></label>
+            <label><input type="radio" name="format" value="Pod of 2–4"><span>Pod of 2–4</span></label>
+            <label><input type="radio" name="format" value="Group of 5–6"><span>Group of 5–6</span></label>
+            <label><input type="radio" name="format" value="Drop-in tables"><span>Drop-in tables</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="pref">
+          <legend>When you study <span class="hint">Pick any</span></legend>
+          <div class="chips">
+            <label><input type="checkbox" name="hours" value="Early morning"><span>Early morning</span></label>
+            <label><input type="checkbox" name="hours" value="Daytime"><span>Daytime</span></label>
+            <label><input type="checkbox" name="hours" value="Evening" checked><span>Evening</span></label>
+            <label><input type="checkbox" name="hours" value="Late night"><span>Late night</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="pref pref-feature">
+          <legend>Who you're matched with <span class="hint">Private to you</span></legend>
+          <div class="chips">
+            <label><input type="radio" name="match" value="Anyone" checked><span>Anyone</span></label>
+            <label><input type="radio" name="match" value="Same gender only"><span>Same gender only</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <aside class="ticket" aria-label="Your study room">
+        <p class="ticket-label">Your study room</p>
+        <dl class="ticket-rows">
+          <div><dt>Floor</dt><dd data-out="noise">Quiet floor</dd></div>
+          <div><dt>Format</dt><dd data-out="format">1-on-1 partner</dd></div>
+          <div><dt>Hours</dt><dd data-out="hours">Evening</dd></div>
+          <div><dt>Matched with</dt><dd data-out="match">Anyone</dd></div>
+        </dl>
+        <form class="waitlist waitlist-ticket" data-source="builder" data-prefs novalidate>
+          <label class="visually-hidden" for="build-email">Email</label>
+          <input id="build-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
+          <label class="visually-hidden" for="build-stage">Your stage</label>
+          <select id="build-stage" name="stage" required>
+            <option value="" selected disabled>Your stage</option>
+            <option value="undergrad">Undergraduate</option>
+            <option value="postbacc">Post-bacc</option>
+            <option value="grad">Master's or graduate program</option>
+            <option value="gap_year">Gap year</option>
+            <option value="applying">Applying to medical school</option>
+            <option value="other">Other</option>
+          </select>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-light" type="submit">Save my spot, free</button>
+          <p class="form-note" role="status" aria-live="polite">No card. No fees. Just your email.</p>
+        </form>
+      </aside>
+    </div>
+  </section>
+
+  <section class="floors-section" aria-labelledby="floors-title">
+    <div class="wrap floors-grid">
+      <div class="reveal">
+        <h2 id="floors-title">Three floors. Pick your focus.</h2>
+        <p class="section-intro">Like a campus library, every floor has its own noise level. Sit wherever matches your energy that day, or book a private room for your partner or study group.</p>
+      </div>
+      <aside class="directory reveal" aria-label="Floor directory">
         <p class="directory-title">Floor directory</p>
         <ol class="floors">
           <li style="--i:0">
@@ -77,69 +187,82 @@
             <span class="floor-text"><strong>Study rooms</strong><span>Book a 1-on-1 partner, a pod of 2–4, or a group of 5–6.</span></span>
           </li>
         </ol>
-        <p class="directory-foot">Every floor meets online, on video. Drop-in tables on each one.</p>
+        <p class="directory-foot">Every floor meets online, on video, with drop-in tables on each one.</p>
       </aside>
     </div>
   </section>
 
   <section class="band" aria-labelledby="how">
     <div class="wrap">
-      <h2 id="how">How a session works</h2>
-      <ol class="steps">
+      <h2 id="how" class="reveal">How a session works</h2>
+      <ol class="reveal steps">
         <li>
-          <h3>Choose where to sit</h3>
-          <p>Drop in at an open table on any floor, or book a room ahead of time.</p>
+          <h3>Pick a floor or a room</h3>
+          <p>Join an open table on the quiet, collaborative, or social floor, or book a private room ahead of time.</p>
         </li>
         <li>
           <h3>Get matched</h3>
           <p>Partners are paired by time, format, social level, and stage of training.</p>
         </li>
         <li>
-          <h3>Check in</h3>
-          <p>State your goal in fifteen seconds when you sit down, then mark it done when you leave.</p>
+          <h3>Set today's goal</h3>
+          <p>Share your goal in fifteen seconds when you sit down, then check it off before you leave.</p>
         </li>
         <li>
-          <h3>Keep the record</h3>
-          <p>Hours and goals are logged for you, so progress over weeks is easy to see.</p>
+          <h3>Watch your progress</h3>
+          <p>Hours and goals are logged for you, so you can see how far you've come week to week.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="split" aria-labelledby="matching">
-    <div class="wrap split-grid">
-      <div>
-        <h2 id="matching">Matched to how you study</h2>
-        <p>Studying well with someone depends on more than a shared subject. PreRounds pairs you on the details that decide whether a session works.</p>
+
+  <section class="free" aria-labelledby="free-title">
+    <div class="wrap">
+      <h2 id="free-title" class="reveal">Free. No card. No catch.</h2>
+      <p class="reveal free-quote">Future doctors already pay for prep books, practice exams, the MCAT, and every application along the way. A place to study shouldn't be one more bill.</p>
+      <div class="reveal free-grid">
+        <div>
+          <h3>Nothing to pay</h3>
+          <p>Study rooms, matching, check-ins, and tracking are free for students. There is no paid tier to unlock.</p>
+        </div>
+        <div>
+          <h3>No card to join</h3>
+          <p>Signing up takes your email and nothing else. We never ask for a credit card or payment details.</p>
+        </div>
+        <div>
+          <h3>No cancellation fees</h3>
+          <p>Miss a session and nothing is charged. A reliability score for showing up keeps everyone accountable instead.</p>
+        </div>
       </div>
-      <dl class="criteria">
-        <div><dt>Schedule</dt><dd>Sessions at the hours you actually study.</dd></div>
-        <div><dt>Format</dt><dd>One partner, a small pod, or a larger group.</dd></div>
-        <div><dt>Social level</dt><dd>Silent, some conversation, or social between blocks.</dd></div>
-        <div><dt>Stage</dt><dd>People at a similar point, from first-year biology to application season.</dd></div>
-        <div><dt>Same-gender option</dt><dd>Choose to be matched only with partners of your own gender.</dd></div>
-      </dl>
     </div>
   </section>
 
-  <section class="split split-alt" aria-labelledby="reliability">
-    <div class="wrap split-grid">
-      <div>
-        <h2 id="reliability">Reliability instead of penalties</h2>
-        <p>There are no cancellation fees. Each member builds a reliability score by showing up to booked sessions, so partners know who they can count on.</p>
-      </div>
-      <div class="score" aria-hidden="true">
-        <div class="score-ring"><span>96%</span></div>
-        <p>Sessions attended as booked</p>
-        <p class="score-caption">Example reliability score</p>
-      </div>
+
+  <section class="founder" aria-labelledby="founder-title">
+    <div class="wrap founder-inner">
+      <h2 id="founder-title" class="visually-hidden">Why PreRounds exists</h2>
+      <blockquote class="reveal">
+        <p>“I studied for the MCAT after graduation, and I learned that the hardest part isn’t the content. It’s showing up, day after day. You don’t need someone to hold you accountable at the finish line. You need peers who hold you accountable in the small moments. That’s what PreRounds is for.”</p>
+        <footer><span class="sig" aria-label="D.A.">D.A.</span><span class="role">Founder, PreRounds</span></footer>
+      </blockquote>
+      <ul class="reveal facts" aria-label="About PreRounds">
+        <li><strong>Student-founded &amp; student-led</strong><span>Fully independent</span></li>
+        <li><strong>Founded 2026</strong><span>Baltimore, Maryland</span></li>
+        <li><strong>Nationwide</strong><span>Open to students across the U.S.</span></li>
+      </ul>
     </div>
   </section>
 
   <section class="band band-quiet" aria-labelledby="who">
     <div class="wrap who">
-      <h2 id="who">For everyone on the path to medicine</h2>
-      <p>Whether you're in your first biology course or between graduation and the white coat, you study alongside people working toward the same thing. No one has to do it alone in an empty apartment.</p>
+      <h2 id="who" class="reveal">A community that goes with you</h2>
+      <p>The people you study beside are on the same path you are. Over months of sessions, they become your network: future classmates, partners for the next exam, and people a few steps ahead who remember what this stage felt like.</p>
+      <div class="reveal opps">
+        <div><h3>Lead a pod or a floor</h3><p>Founding members can help lead study pods and shape how floors run. That's real leadership and service you can speak to in your applications.</p></div>
+        <div><h3>Build your network early</h3><p>Meet people across schools and stages, from first-year biology students to applicants interviewing this season.</p></div>
+        <div><h3>Mentorship and tutoring</h3><p>Planned for later: guidance and tutoring from people a few steps ahead of you.</p></div>
+      </div>
       <ul class="stages">
         <li>Undergraduates</li>
         <li>Post-bacc students</li>
@@ -148,14 +271,34 @@
         <li>MCAT preparation</li>
         <li>Current applicants</li>
       </ul>
-      <p class="later">Planned for later: mentorship and tutoring from people a few steps ahead.</p>
+    </div>
+  </section>
+
+  <section class="safety" aria-labelledby="safety-title">
+    <div class="wrap">
+      <h2 id="safety-title" class="reveal">Safe by design</h2>
+      <p class="section-intro">We only ask for your email to join, but that's where our safety measures begin, not where they end. Every room is built so you can focus on your work, not on who's on the other side of the screen.</p>
+      <div class="reveal safety-grid">
+        <div><span class="s-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 19v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 17.5V19"/><circle cx="10" cy="7.5" r="3.5"/><path d="M16.5 11l1.8 1.8L22 9"/></svg></span><h3>Members only</h3><p>Every member verifies their email before joining a room. No anonymous drop-ins from the open internet.</p></div>
+        <div><span class="s-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Screened sign-ups</h3><p>Every sign-up is screened for bots and spam before it ever reaches a room.</p></div>
+        <div><span class="s-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg></span><h3>Encrypted, private sessions</h3><p>Video and audio are encrypted in transit, and sessions are never recorded by PreRounds.</p></div>
+        <div><span class="s-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20v-1a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v1M13 15.3A4 4 0 0 1 15 15h2a4 4 0 0 1 4 4v1"/></svg></span><h3>Same-gender matching</h3><p>Choose to study only with people of your own gender, in every room, pod, and group.</p></div>
+        <div><span class="s-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></span><h3>Report and block</h3><p>Every room has a one-tap report and block. Anyone who breaks the community rules is removed.</p></div>
+        <div><span class="s-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6.5" width="13" height="11" rx="2"/><path d="M16 10.5l5-3v9l-5-3"/></svg></span><h3>You control your camera</h3><p>Cameras are part of the room, but you choose when to sit down and when to check out.</p></div>
+      </div>
     </div>
   </section>
 
   <section class="join" id="join" aria-labelledby="join-title">
     <div class="wrap"><div class="join-inner">
-      <h2 id="join-title">Get early access</h2>
-      <p>PreRounds is opening in stages. Join the waitlist and we'll email you when your spot is ready.</p>
+      <h2 id="join-title">Become a founding member</h2>
+      <p>The founding beta opens in December 2026. Founding members aren't just first in line. They help build PreRounds from the ground up.</p>
+      <ul class="founding-perks">
+        <li><strong>First access</strong><span>Into the first rooms in December</span></li>
+        <li><strong>A real say</strong><span>Help choose which floors and times open first</span></li>
+        <li><strong>Lead a pod</strong><span>First invitations to lead study pods</span></li>
+        <li><strong>Founding badge</strong><span>On your profile, for good</span></li>
+      </ul>
       <form class="waitlist waitlist-full" data-source="footer" novalidate>
         <div class="field">
           <label for="join-name">First name</label>
@@ -178,23 +321,67 @@
           </select>
         </div>
         <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="btn btn-light" type="submit">Join the waitlist</button>
+        <button class="btn btn-light" type="submit">Become a founding member</button>
         <p class="form-note" role="status" aria-live="polite">We only use your email to contact you about PreRounds.</p>
       </form>
     </div></div>
   </section>
+
+  <section class="timeline" aria-labelledby="timeline-title">
+    <div class="wrap">
+      <h2 id="timeline-title" class="reveal">Opening in December</h2>
+      <p class="section-intro">PreRounds opens in stages, so the first rooms are small, well run, and shaped by the people in them.</p>
+      <ol class="reveal tl">
+        <li class="now"><span class="when">Now</span><h3>Waitlist open</h3><p>Save your spot and your study preferences. It takes under a minute.</p></li>
+        <li><span class="when">December 2026</span><h3>Founding beta</h3><p>Founding members are invited into the first rooms and help decide which floors and times open first.</p></li>
+        <li><span class="when">Early 2027</span><h3>Open to everyone</h3><p>More floors, more hours, and more rooms as the community grows.</p></li>
+      </ol>
+    </div>
+  </section>
+
+
+  <section class="faq-link">
+    <div class="wrap faq-link-row">
+      <h2>Have questions?</h2>
+      <a class="btn" href="/faq">Read the FAQ</a>
+    </div>
+  </section>
+
+  <section class="support" aria-labelledby="support-title">
+    <div class="wrap support-row">
+      <div>
+        <h2 id="support-title">Support PreRounds</h2>
+        <p>PreRounds will always be free for students. Donations will open soon for those who wish to help sustain that commitment. To be notified when they do, contact us at <a href="mailto:hello@prerounds.org?subject=Supporting%20PreRounds">hello@prerounds.org</a>.</p>
+      </div>
+      <a class="btn btn-outline" href="mailto:hello@prerounds.org?subject=Supporting%20PreRounds">I'd like to donate</a>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-row">
-    <img src="/logo.svg" alt="PreRounds" width="128" height="32">
-    <nav aria-label="Contact and social">
-      <a href="mailto:hello@prerounds.org">hello@prerounds.org</a>
-      <a href="https://www.instagram.com/pre.rounds/" rel="noopener">Instagram</a>
-      <a href="https://www.tiktok.com/@pre.rounds" rel="noopener">TikTok</a>
-      <a href="https://www.youtube.com/@pre.rounds" rel="noopener">YouTube</a>
-    </nav>
-    <p class="copyright">© 2026 PreRounds</p>
+  <div class="wrap">
+    <div class="footer-row">
+      <img src="/logo.svg" alt="PreRounds" width="128" height="32">
+      <nav aria-label="Site">
+        <a href="/contact">Contact</a>
+        <a href="/faq">FAQ</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <nav aria-label="Social" class="social">
+        <a href="https://www.instagram.com/pre.rounds/" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@pre.rounds" rel="noopener">TikTok</a>
+        <a href="https://www.youtube.com/@pre.rounds" rel="noopener">YouTube</a>
+        <a href="mailto:hello@prerounds.org">hello@prerounds.org</a>
+        <a href="tel:+13018428929">(301) 842-8929</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>PreRounds is an independent, student-founded and student-led organization based in Baltimore, Maryland. PreRounds is not affiliated with, sponsored by, or endorsed by the Association of American Medical Colleges (“AAMC”), the American Medical College Application Service (“AMCAS”), or any medical school or academic institution. MCAT® and AMCAS® are registered trademarks of the AAMC. All other trademarks are the property of their respective owners.</p>
+      <p>The services offered by PreRounds are limited to virtual study environments provided for general educational purposes. Nothing on this website constitutes medical, legal, or other professional advice, admissions consulting, or a representation or guarantee of any examination result or admission outcome. Use of this website and its services is subject to the PreRounds <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a>.</p>
+      <p>Legal inquiries and notices may be directed to <a href="mailto:hello@prerounds.org?subject=Legal%20inquiry">hello@prerounds.org</a> or <a href="tel:+13018428929">(301) 842-8929</a>.</p>
+      <p class="rights">© 2026 PreRounds. All rights reserved.<span> · Baltimore, Maryland</span></p>
+    </div>
   </div>
 </footer>
 

@@ -10,6 +10,28 @@ const clean = (v) => (v || "").replace(/[^\w.-]/g, "").slice(0, 40);
 const campaign = [clean(params.get("utm_source")), clean(params.get("utm_campaign")), clean(params.get("utm_content"))]
   .filter(Boolean).join("/");
 
+// Preference picker: read the current choices and keep the "Your study room" card in sync.
+const builder = document.getElementById("build");
+function readPrefs() {
+  if (!builder) return null;
+  const pick = (name) => builder.querySelector(`input[name="${name}"]:checked`)?.value || null;
+  const hours = [...builder.querySelectorAll('input[name="hours"]:checked')].map((i) => i.value);
+  return { noise: pick("noise"), format: pick("format"), hours, match: pick("match") };
+}
+function renderPrefs() {
+  const p = readPrefs();
+  if (!p) return;
+  const text = { noise: p.noise, format: p.format, hours: p.hours.length ? p.hours.join(", ") : "Any time", match: p.match };
+  for (const [key, value] of Object.entries(text)) {
+    const el = builder.querySelector(`[data-out="${key}"]`);
+    if (el && el.textContent !== value) {
+      el.textContent = value;
+      el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+    }
+  }
+}
+if (builder) builder.addEventListener("change", renderPrefs);
+
 function setNote(form, text, kind) {
   const note = form.querySelector(".form-note");
   note.textContent = text;
@@ -47,6 +69,7 @@ document.querySelectorAll("form.waitlist").forEach((form) => {
     const where = form.dataset.source || "site";
     const body = { email: emailValue, stage: stage.value, source: (campaign ? `${campaign}|${where}` : where).slice(0, 100) };
     if (name && name.value.trim()) body.first_name = name.value.trim().slice(0, 80);
+    if (form.hasAttribute("data-prefs")) body.preferences = readPrefs();
 
     button.disabled = true;
     const label = button.textContent;
@@ -59,7 +82,9 @@ document.querySelectorAll("form.waitlist").forEach((form) => {
       });
       if (res.status === 201) {
         form.reset();
-        setNote(form, "You're on the list. We'll email you when early access opens.", "is-success");
+        setNote(form, form.hasAttribute("data-prefs")
+          ? "Your spot and preferences are saved. We'll email you when early access opens."
+          : "You're on the list. We'll email you when early access opens.", "is-success");
       } else if (res.status === 409) {
         setNote(form, "This email is already on the waitlist.", "is-success");
       } else {
@@ -73,3 +98,27 @@ document.querySelectorAll("form.waitlist").forEach((form) => {
     }
   });
 });
+
+// Scroll reveal: sections fade up as they come into view.
+const reveals = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  reveals.forEach((el) => io.observe(el));
+} else {
+  reveals.forEach((el) => el.classList.add("in"));
+}
+
+// Hero preview: the shared block timer counts down.
+const timer = document.querySelector("[data-tick]");
+if (timer && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let left = Number(timer.dataset.tick);
+  setInterval(() => {
+    left = left > 0 ? left - 1 : 50 * 60;
+    const m = Math.floor(left / 60), s = String(left % 60).padStart(2, "0");
+    timer.textContent = `${m}:${s} left`;
+  }, 1000);
+}
