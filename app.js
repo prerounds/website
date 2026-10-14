@@ -98,3 +98,27 @@ document.querySelectorAll("form.waitlist").forEach((form) => {
     }
   });
 });
+
+// Scroll reveal: sections fade up as they come into view.
+const reveals = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  reveals.forEach((el) => io.observe(el));
+} else {
+  reveals.forEach((el) => el.classList.add("in"));
+}
+
+// Hero preview: the shared block timer counts down.
+const timer = document.querySelector("[data-tick]");
+if (timer && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let left = Number(timer.dataset.tick);
+  setInterval(() => {
+    left = left > 0 ? left - 1 : 50 * 60;
+    const m = Math.floor(left / 60), s = String(left % 60).padStart(2, "0");
+    timer.textContent = `${m}:${s} left`;
+  }, 1000);
+}
