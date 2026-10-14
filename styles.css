@@ -250,6 +250,13 @@ input:focus, select:focus { border-color: var(--orchid); outline: none; box-shad
 .footer-row .social { margin-left: auto; }
 .legal { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 8px; font-size: .85rem; line-height: 1.55; color: var(--ink-soft); }
 .legal p { max-width: 70em; }
+.legal a { color: var(--ink-soft); }
+.legal .rights { margin-top: 6px; font-family: var(--display); font-weight: 800; font-size: .92rem; color: var(--ink); }
+.contact-phone { margin-top: 44px; }
+.contact-phone h2 { font-size: 1.4rem; }
+.contact-phone p { margin-top: 10px; font-family: var(--display); font-weight: 800; font-size: 1.3rem; }
+.contact-phone .muted { font-size: 1rem; font-weight: 700; color: var(--ink-soft); }
+.contact-phone a { color: var(--orchid-ink); text-decoration: none; }
 
 /* Inside a study room (illustrated preview) */
 .inside { padding: 96px 0 88px; }
