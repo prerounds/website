@@ -251,7 +251,8 @@ input:focus, select:focus { border-color: var(--orchid); outline: none; box-shad
 .legal { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 8px; font-size: .85rem; line-height: 1.55; color: var(--ink-soft); }
 .legal p { max-width: 70em; }
 .legal a { color: var(--ink-soft); }
-.legal .rights { margin-top: 6px; font-family: var(--display); font-weight: 800; font-size: .92rem; color: var(--ink); }
+.legal .rights { margin-top: 10px; font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: var(--ink); }
+.legal .rights span { font-weight: 700; color: var(--ink-soft); }
 .contact-phone { margin-top: 44px; }
 .contact-phone h2 { font-size: 1.4rem; }
 .contact-phone p { margin-top: 10px; font-family: var(--display); font-weight: 800; font-size: 1.3rem; }
@@ -293,7 +294,7 @@ input:focus, select:focus { border-color: var(--orchid); outline: none; box-shad
 .safety h2 { font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.3rem); letter-spacing: -0.02em; }
 .s-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--sun); display: grid; place-items: center; }
 .s-icon svg { width: 26px; height: 26px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.safety-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.safety-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .safety-grid > div { border: 1px solid var(--line); border-radius: 20px; padding: 26px; background: #fff; box-shadow: 0 10px 30px -22px rgba(43,35,64,.35); }
 .safety-grid h3 { font-size: 1.3rem; margin-top: 16px; }
 .safety-grid p { margin-top: 8px; color: var(--ink-soft); font-size: 1.05rem; }
@@ -301,11 +302,10 @@ input:focus, select:focus { border-color: var(--orchid); outline: none; box-shad
 /* Founder note */
 .founder { background: var(--mist); padding: 80px 0; }
 .founder blockquote { margin: 0 auto; max-width: 38rem; position: relative; padding-left: 28px; border-left: 4px solid; border-image: var(--sun) 1; }
-.founder blockquote::before { content: "\201C"; position: absolute; left: 22px; top: -38px; font-family: var(--text); font-size: 5rem; line-height: 1; color: var(--orchid); opacity: .35; }
 .founder blockquote p { font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); line-height: 1.55; font-style: italic; color: var(--ink); }
 .founder footer { margin-top: 18px; display: flex; align-items: center; gap: 14px; font-family: var(--display); }
 .founder .sig { font-family: "Mrs Saint Delafield", cursive; font-weight: 400; font-size: 3.6rem; line-height: 1; color: var(--ink); padding-right: 6px; }
-.founder .role { font-weight: 800; font-size: 1.1rem; color: var(--ink-soft); }
+.founder .role { font-weight: 800; font-size: 1.3rem; color: var(--ink); }
 
 /* Community opportunities */
 .opps { margin-top: 30px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -318,7 +318,7 @@ input:focus, select:focus { border-color: var(--orchid); outline: none; box-shad
 .launch-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 0 4px rgba(248,110,135,.2); }
 
 /* Founder facts */
-.facts { list-style: none; margin: 44px auto 0; padding: 26px 0 0; max-width: 54rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; text-align: center; }
+.facts { list-style: none; margin: 44px auto 0; padding: 26px 0 0; max-width: 62rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; text-align: center; }
 .facts strong { display: block; font-family: var(--display); font-weight: 800; font-size: 1.25rem; color: var(--ink); }
 .facts span { display: block; margin-top: 2px; font-size: .98rem; color: var(--ink-soft); }
 
@@ -384,6 +384,8 @@ input:focus, select:focus { border-color: var(--orchid); outline: none; box-shad
 .js .reveal.in > *:nth-child(2) { transition-delay: .12s; }
 .js .reveal.in > *:nth-child(3) { transition-delay: .24s; }
 .js .reveal.in > *:nth-child(4) { transition-delay: .36s; }
+.js .reveal.in > *:nth-child(5) { transition-delay: .48s; }
+.js .reveal.in > *:nth-child(6) { transition-delay: .6s; }
 .js .hero-copy > *, .js .room-hero { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
 .js .hero-copy > *:nth-child(2) { animation-delay: .08s; }
 .js .hero-copy > *:nth-child(3) { animation-delay: .16s; }
@@ -418,10 +420,21 @@ input:focus, select:focus { border-color: var(--orchid); outline: none; box-shad
 .prose li { margin-top: 8px; }
 .contact-grid { margin-top: 36px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .contact-card { display: block; padding: 24px; border-radius: 20px; background: #fff; border: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
-.contact-card:hover { border-color: var(--orchid); transform: translateY(-2px); box-shadow: 0 14px 30px -22px rgba(43,35,64,.4); }
+.contact-card:hover { border-color: var(--orchid); }
 .contact-card h2 { font-size: 1.25rem; }
 .contact-card p { margin-top: 8px; color: var(--ink-soft); font-size: 1.02rem; }
-.contact-card span { display: inline-block; margin-top: 14px; font-family: var(--display); font-weight: 800; color: var(--orchid-ink); }
+.contact-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.contact-links a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--mist); color: var(--orchid-ink); font-family: var(--display); font-weight: 800; text-decoration: none; }
+.contact-links a:first-child { background: var(--ink); color: #fff; }
+.contact-links a:hover { filter: brightness(.95); }
+.contact-direct { margin-top: 28px; color: var(--ink-soft); font-size: 1.08rem; }
+.faq-page { padding: 0; border: 0; margin-top: 28px; }
+.faq-page details p a { color: var(--orchid-ink); }
+.faq-cta { margin-top: 36px; }
+.faq-link { padding: 56px 0; border-top: 1px solid var(--line); }
+.faq-link-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.faq-link h2 { font-size: 1.8rem; }
+.support a { color: var(--orchid-ink); }
 .contact-social { margin-top: 44px; }
 .contact-social h2 { font-size: 1.4rem; }
 .contact-social p { margin-top: 10px; font-family: var(--display); font-weight: 700; }
