@@ -318,7 +318,7 @@ select:has(option[value=""]:checked) { color: #8C85A0; }
 
 /* Launch pill */
 .launch-pill { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; padding: 7px 16px 7px 12px; border-radius: 999px; background: var(--mist); border: 1px solid var(--line); font-family: var(--display); font-weight: 800; font-size: .95rem; color: var(--orchid-ink); }
-.pill-link { text-decoration: none; transition: background-color .15s ease, border-color .15s ease; }
+.pill-link { font-size: 1.05rem; padding: 10px 20px 10px 14px; gap: 12px; border: 1.5px solid #D9C6F2; box-shadow: 0 6px 18px -12px rgba(126,63,163,.5); text-decoration: none; transition: background-color .15s ease, border-color .15s ease; }
 .pill-link:hover { background: #EBE1F8; border-color: var(--orchid); }
 .tl p a { color: var(--orchid-ink); }
 .launch-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 0 4px rgba(248,110,135,.2); }
@@ -446,6 +446,18 @@ select:has(option[value=""]:checked) { color: #8C85A0; }
 .contact-social p { margin-top: 10px; font-family: var(--display); font-weight: 700; }
 .contact-social .muted { color: var(--ink-soft); font-weight: 700; }
 
+/* Study Hall banner */
+.sh-banner { padding: 0 0 72px; }
+.shb { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 22px; padding: 26px 28px; border-radius: 22px; background: var(--ink); color: #fff; text-decoration: none; position: relative; overflow: hidden; box-shadow: 0 20px 50px -30px rgba(43,35,64,.6); transition: transform .2s ease; }
+.shb::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--sun); }
+.shb:hover { transform: translateY(-2px); }
+.shb-live { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.1); font-family: var(--display); font-weight: 800; font-size: .9rem; white-space: nowrap; }
+.shb-live i { width: 9px; height: 9px; border-radius: 50%; background: #5BD69A; box-shadow: 0 0 0 4px rgba(91,214,154,.2); animation: shb-pulse 2s ease-in-out infinite; }
+@keyframes shb-pulse { 50% { box-shadow: 0 0 0 7px rgba(91,214,154,.08); } }
+.shb h2 { color: #fff; font-size: clamp(1.35rem, 1.1rem + .9vw, 1.8rem); }
+.shb p { margin-top: 6px; color: #CFC6E6; font-size: 1.05rem; }
+.shb-cta { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 22px; border-radius: 12px; background: #fff; color: var(--ink); font-family: var(--display); font-weight: 800; white-space: nowrap; }
+
 /* Responsive */
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -500,6 +512,11 @@ select:has(option[value=""]:checked) { color: #8C85A0; }
   .facts { grid-template-columns: 1fr; gap: 14px; }
   .timeline { padding: 64px 0; }
   .launch-pill { font-size: .88rem; }
+  .pill-link { font-size: .98rem; padding: 9px 16px 9px 12px; }
+  .sh-banner { padding: 0 0 48px; }
+  .shb { grid-template-columns: 1fr; gap: 14px; padding: 22px 20px; }
+  .shb-live { justify-self: start; }
+  .shb-cta { justify-content: center; }
   .room-bar, .room-body, .room-foot, .room figcaption { padding-left: 14px; padding-right: 14px; }
   .room-grid { gap: 8px; }
   .nm { font-size: .7rem; left: 6px; bottom: 6px; padding: 2px 7px; }
