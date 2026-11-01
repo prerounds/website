@@ -46,6 +46,17 @@
         </div>
       </div>
 
+      <div class="sh-card sh-privacy">
+        <h2>Your privacy in the room</h2>
+        <ul>
+          <li><strong>Only members in the session can see you.</strong> Everyone signs in with a verified email. There's no public link, and no one can watch from outside the room.</li>
+          <li><strong>Video is encrypted.</strong> It's scrambled on its way between you and the room, so no one snooping on the internet can view it.</li>
+          <li><strong>Nothing is recorded.</strong> PreRounds never records sessions, and no footage is saved anywhere.</li>
+          <li><strong>You're in control.</strong> Turn your camera off or leave anytime. Microphones stay off on the Quiet floor.</li>
+          <li><strong>Recording others is against the rules.</strong> Anyone can report a member, and the host can remove them.</li>
+        </ul>
+      </div>
+
       <div class="sh-card sh-access" id="sh-access">
         <div data-view="signed-out">
           <h2>Sign in to join</h2>
@@ -63,6 +74,7 @@
             <label for="sh-name">Name shown in the room</label>
             <input id="sh-name" name="name" type="text" maxlength="40" autocomplete="given-name" placeholder="First name" required>
             <label class="sh-check"><input type="checkbox" name="agree" required> I'm 18 or older and I agree to the <a href="/terms" target="_blank" rel="noopener">community rules</a>.</label>
+            <p class="sh-assure"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg><span>Only members in this session can see your camera. Video is encrypted and never recorded, and you can turn your camera off or leave anytime.</span></p>
             <button class="btn" type="submit" data-join-button>Enter the Study Hall</button>
           </form>
           <p class="form-note" data-join-note role="status" aria-live="polite"></p>

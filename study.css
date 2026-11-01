@@ -10,6 +10,11 @@
 .sh-status { margin-top: 14px; color: var(--ink-soft); font-size: 1rem; }
 .sh-status.is-open { color: #1F7A50; }
 .sh-how ol { margin: 12px 0 0; padding-left: 1.2em; color: var(--ink-soft); display: grid; gap: 8px; font-size: 1.02rem; }
+.sh-privacy { margin-top: 18px; border-color: #D9CCF0; }
+.sh-privacy ul { margin: 12px 0 0; padding-left: 1.2em; display: grid; gap: 8px; color: var(--ink-soft); font-size: 1.02rem; }
+.sh-privacy strong { color: var(--ink); }
+.sh-assure { display: flex; gap: 10px; align-items: flex-start; background: #fff; border-radius: 12px; padding: 12px 14px; font-size: .98rem; color: var(--ink-soft); }
+.sh-assure svg { width: 20px; height: 20px; flex: none; margin-top: 2px; fill: none; stroke: var(--orchid-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .sh-access { margin-top: 18px; background: var(--mist); border: 0; }
 .sh-form { margin-top: 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; max-width: 640px; }
 .sh-form input[type="email"], .sh-form input[type="text"] { min-height: 56px; }
