@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founding Study Hall | PreRounds</title>
+<meta name="description" content="Free silent study sessions on camera with other future doctors. Thursdays, 9–11 AM and 8–10 PM ET.">
+<meta name="theme-color" content="#2B2340">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://prerounds.org/study">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/study.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="/" class="brand" aria-label="PreRounds home"><img src="/logo.svg" alt="PreRounds" width="168" height="42"></a>
+    <a href="/#build" class="btn btn-small">Join free</a>
+  </div>
+</header>
+<main id="main" class="page study-page">
+  <div class="wrap">
+    <section class="sh-intro" id="sh-intro">
+      <p class="launch-pill"><span class="dot" aria-hidden="true"></span>Now open: the Founding Study Hall</p>
+      <h1>Study on camera with other future doctors.</h1>
+      <p class="page-lede">A free, silent study session on the Quiet floor. Cameras on, microphones off, and a shared timer that keeps everyone working in focused blocks.</p>
+
+      <div class="sh-grid">
+        <div class="sh-card sh-when">
+          <h2>When</h2>
+          <ul class="sh-sessions" data-sessions><li>Thursdays, 9 AM–11 AM ET</li><li>Thursdays, 8 PM–10 PM ET</li></ul>
+          <p class="sh-status" data-status>Doors open 10 minutes early.</p>
+        </div>
+        <div class="sh-card sh-how">
+          <h2>How it works</h2>
+          <ol>
+            <li>Sign in with your email. We send a one-time link, so only verified members get in.</li>
+            <li>Come in when the doors open, ten minutes before the session.</li>
+            <li>Set one goal, turn your camera on, and work in 50-minute blocks with 10-minute breaks.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sh-card sh-access" id="sh-access">
+        <div data-view="signed-out">
+          <h2>Sign in to join</h2>
+          <form class="sh-form" data-signin novalidate>
+            <label class="visually-hidden" for="sh-email">Email</label>
+            <input id="sh-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
+            <button class="btn" type="submit">Email me a sign-in link</button>
+          </form>
+          <p class="form-note" data-signin-note role="status" aria-live="polite">Free. No password and no card. The link signs you in on this device.</p>
+        </div>
+
+        <div data-view="signed-in" hidden>
+          <h2>You're signed in<span data-who></span></h2>
+          <form class="sh-form sh-join" data-join novalidate>
+            <label for="sh-name">Name shown in the room</label>
+            <input id="sh-name" name="name" type="text" maxlength="40" autocomplete="given-name" placeholder="First name" required>
+            <label class="sh-check"><input type="checkbox" name="agree" required> I'm 18 or older and I agree to the <a href="/terms" target="_blank" rel="noopener">community rules</a>.</label>
+            <button class="btn" type="submit" data-join-button>Enter the Study Hall</button>
+          </form>
+          <p class="form-note" data-join-note role="status" aria-live="polite"></p>
+          <p class="sh-signout"><button type="button" class="linklike" data-signout>Sign out</button></p>
+        </div>
+      </div>
+
+      <div class="sh-rules">
+        <h2>Room rules</h2>
+        <ul>
+          <li>Microphones stay off. This is the Quiet floor.</li>
+          <li>Keep your camera appropriate for a shared study space.</li>
+          <li>No recording or screenshots of other members. PreRounds never records sessions.</li>
+          <li>Anyone can report a member from the room, and the host can remove anyone who breaks the rules.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sh-room" id="sh-room" hidden aria-label="Study Hall room">
+      <div class="sh-room-bar">
+        <span class="room-name"><i></i>Quiet floor · Founding Study Hall</span>
+        <span class="sh-block" data-block>Focus block</span>
+        <span class="room-timer" data-block-timer>50:00</span>
+      </div>
+      <div class="sh-goal">
+        <label for="sh-goal-input">Today's goal</label>
+        <input id="sh-goal-input" type="text" maxlength="80" placeholder="e.g. Finish 2 CARS passages" data-goal>
+        <button type="button" class="goal-toggle" data-goal-done aria-pressed="false">Mark done</button>
+      </div>
+      <div class="sh-tiles" data-tiles></div>
+      <p class="sh-empty" data-empty hidden>You're the first one here. Others will appear as they join.</p>
+      <div class="sh-controls">
+        <button type="button" class="sh-btn" data-camera aria-pressed="true">Turn camera off</button>
+        <span class="sh-mic">Microphone off (Quiet floor)</span>
+        <button type="button" class="sh-btn sh-leave" data-leave>Leave</button>
+      </div>
+      <div class="sh-report" data-report-panel hidden>
+        <p>Report <strong data-report-name></strong></p>
+        <select data-report-reason>
+          <option value="Inappropriate camera or behavior">Inappropriate camera or behavior</option>
+          <option value="Harassment">Harassment</option>
+          <option value="Recording or screenshots">Recording or screenshots</option>
+          <option value="Spam or advertising">Spam or advertising</option>
+          <option value="Something else">Something else</option>
+        </select>
+        <div class="sh-report-actions">
+          <button type="button" class="sh-btn" data-report-send>Send report</button>
+          <button type="button" class="sh-btn sh-ghost" data-report-cancel>Cancel</button>
+        </div>
+      </div>
+      <p class="sh-toast" data-toast role="status" aria-live="polite"></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <img src="/logo.svg" alt="PreRounds" width="128" height="32">
+      <nav aria-label="Site">
+        <a href="/study">Study Hall</a>
+        <a href="/contact">Contact</a>
+        <a href="/faq">FAQ</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <nav aria-label="Social" class="social">
+        <a href="https://www.instagram.com/pre.rounds/" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@pre.rounds" rel="noopener">TikTok</a>
+        <a href="https://www.youtube.com/@pre.rounds" rel="noopener">YouTube</a>
+        <a href="mailto:hello@prerounds.org">hello@prerounds.org</a>
+        <a href="tel:+13018428929">(301) 842-8929</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>PreRounds is an independent, student-founded and student-led organization based in Baltimore, Maryland. PreRounds is not affiliated with, sponsored by, or endorsed by the Association of American Medical Colleges (“AAMC”), the American Medical College Application Service (“AMCAS”), or any medical school or academic institution. MCAT® and AMCAS® are registered trademarks of the AAMC. All other trademarks are the property of their respective owners.</p>
+      <p>The services offered by PreRounds are limited to virtual study environments provided for general educational purposes. Nothing on this website constitutes medical, legal, or other professional advice, admissions consulting, or a representation or guarantee of any examination result or admission outcome. Use of this website and its services is subject to the PreRounds <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a>.</p>
+      <p>Legal inquiries and notices may be directed to <a href="mailto:hello@prerounds.org?subject=Legal%20inquiry">hello@prerounds.org</a> or <a href="tel:+13018428929">(301) 842-8929</a>.</p>
+      <p class="rights">© 2026 PreRounds. All rights reserved.<span> · Baltimore, Maryland</span></p>
+    </div>
+  </div>
+</footer>
+<script type="module" src="/study.js"></script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

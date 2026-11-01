@@ -318,6 +318,9 @@ select:has(option[value=""]:checked) { color: #8C85A0; }
 
 /* Launch pill */
 .launch-pill { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; padding: 7px 16px 7px 12px; border-radius: 999px; background: var(--mist); border: 1px solid var(--line); font-family: var(--display); font-weight: 800; font-size: .95rem; color: var(--orchid-ink); }
+.pill-link { text-decoration: none; transition: background-color .15s ease, border-color .15s ease; }
+.pill-link:hover { background: #EBE1F8; border-color: var(--orchid); }
+.tl p a { color: var(--orchid-ink); }
 .launch-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 0 4px rgba(248,110,135,.2); }
 
 /* Founder facts */
