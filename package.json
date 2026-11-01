@@ -1,0 +1,8 @@
+{
+  "name": "prerounds-website",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@stream-io/node-sdk": "0.8.12"
+  }
+}
