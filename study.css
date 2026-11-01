@@ -10,9 +10,17 @@
 .sh-status { margin-top: 14px; color: var(--ink-soft); font-size: 1rem; }
 .sh-status.is-open { color: #1F7A50; }
 .sh-how ol { margin: 12px 0 0; padding-left: 1.2em; color: var(--ink-soft); display: grid; gap: 8px; font-size: 1.02rem; }
-.sh-privacy { margin-top: 18px; border-color: #D9CCF0; }
-.sh-privacy ul { margin: 12px 0 0; padding-left: 1.2em; display: grid; gap: 8px; color: var(--ink-soft); font-size: 1.02rem; }
-.sh-privacy strong { color: var(--ink); }
+.sh-privacy { margin-top: 18px; padding: 20px; border-radius: 20px; background: linear-gradient(180deg, #FBF8FF, #F6F1FD); border: 1px solid var(--line); }
+.sh-privacy-head { display: flex; gap: 14px; align-items: center; }
+.sh-privacy-head h2 { font-size: 1.15rem; }
+.sh-privacy-head p { margin-top: 2px; font-size: .95rem; color: var(--ink-soft); }
+.sh-shield { width: 40px; height: 40px; flex: none; border-radius: 12px; background: var(--sun); display: grid; place-items: center; }
+.sh-shield svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sh-privacy ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 22px; }
+.sh-privacy li { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; line-height: 1.5; color: var(--ink-soft); }
+.sh-privacy li svg { width: 18px; height: 18px; flex: none; margin-top: 2px; fill: none; stroke: var(--orchid-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sh-privacy strong { color: var(--ink); font-family: var(--display); font-weight: 800; }
+.sh-assure strong { color: var(--ink); font-family: var(--display); font-weight: 800; }
 .sh-assure { display: flex; gap: 10px; align-items: flex-start; background: #fff; border-radius: 12px; padding: 12px 14px; font-size: .98rem; color: var(--ink-soft); }
 .sh-assure svg { width: 20px; height: 20px; flex: none; margin-top: 2px; fill: none; stroke: var(--orchid-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .sh-access { margin-top: 18px; background: var(--mist); border: 0; }
@@ -70,6 +78,7 @@
 .sh-toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 @media (max-width: 760px) {
+  .sh-privacy ul { grid-template-columns: 1fr; }
   .sh-grid { grid-template-columns: 1fr; }
   .sh-form { grid-template-columns: 1fr; }
   .sh-form .btn { justify-self: stretch; }
