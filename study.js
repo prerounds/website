@@ -51,13 +51,21 @@ function renderSchedule() {
   }
 }
 
+// ---------- Privacy panel (phones show titles first) ----------
+$("[data-pv-toggle]")?.addEventListener("click", (e) => {
+  const panel = e.currentTarget.closest(".sh-privacy");
+  const open = panel.classList.toggle("open");
+  e.currentTarget.setAttribute("aria-expanded", String(open));
+  e.currentTarget.textContent = open ? "Show less" : "See how each one works";
+});
+
 // ---------- Sign-in ----------
 function showSignedIn(s) {
   session = s;
   views.out.hidden = !!s;
   views.in.hidden = !s;
   if (s) {
-    $("[data-who]").textContent = ` as ${s.user.email}`;
+    $("[data-who]").textContent = s.user.email;
     const saved = store.get("sh-name") || s.user.user_metadata?.display_name || "";
     if (saved && !$("#sh-name").value) $("#sh-name").value = saved;
   }

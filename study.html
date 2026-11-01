@@ -52,13 +52,14 @@
           <div><h2>Your privacy in the room</h2><p>Private and secure by design. Here's exactly how.</p></div>
         </div>
         <ul>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 19v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 17.5V19M10 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM16.5 11l1.8 1.8L22 9"/></svg><div><strong>Only members in the session can see you.</strong> Everyone signs in with a verified email. Our servers check that sign-in before issuing a private access pass to the room. There's no public link, and no one can watch from outside.</div></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg><div><strong>Passes expire.</strong> Each pass is made for one member and one session, and it stops working shortly after the session ends, so it can't be shared or reused later.</div></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10.5h14v10H5zM8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg><div><strong>Video is encrypted.</strong> It travels encrypted through secure video servers, so no one snooping on the internet can view it.</div></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 6.6A2 2 0 0 1 12 6h3a2 2 0 0 1 2 2v3.3M17 14.5l4 2.5V7l-4 2.5M15 18H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2"/></svg><div><strong>Nothing is recorded.</strong> PreRounds never records sessions, and no footage is saved anywhere.</div></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9M18.4 6.6a9 9 0 1 1-12.8 0"/></svg><div><strong>You're in control.</strong> Turn your camera off or leave anytime. Microphones stay off on the Quiet floor.</div></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><div><strong>Recording others is against the rules.</strong> Anyone can report a member, and the host can remove them.</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 19v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 17.5V19M10 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM16.5 11l1.8 1.8L22 9"/></svg><div><strong>Only members in the session can see you.</strong> <span class="pv-more">Everyone signs in with a verified email. Our servers check that sign-in before issuing a private access pass to the room. There's no public link, and no one can watch from outside.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg><div><strong>Passes expire.</strong> <span class="pv-more">Each pass is made for one member and one session, and it stops working shortly after the session ends, so it can't be shared or reused later.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10.5h14v10H5zM8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg><div><strong>Video is encrypted.</strong> <span class="pv-more">It travels encrypted through secure video servers, so no one snooping on the internet can view it.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 6.6A2 2 0 0 1 12 6h3a2 2 0 0 1 2 2v3.3M17 14.5l4 2.5V7l-4 2.5M15 18H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2"/></svg><div><strong>Nothing is recorded.</strong> <span class="pv-more">PreRounds never records sessions, and no footage is saved anywhere.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9M18.4 6.6a9 9 0 1 1-12.8 0"/></svg><div><strong>You're in control.</strong> <span class="pv-more">Turn your camera off or leave anytime. Microphones stay off on the Quiet floor.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><div><strong>Recording others is against the rules.</strong> <span class="pv-more">Anyone can report a member, and the host can remove them.</span></div></li>
         </ul>
+        <button type="button" class="pv-toggle" data-pv-toggle aria-expanded="false">See how each one works</button>
       </div>
 
       <div class="sh-card sh-access" id="sh-access">
@@ -72,17 +73,21 @@
           <p class="form-note" data-signin-note role="status" aria-live="polite">Free. No password and no card. The link signs you in on this device.</p>
         </div>
 
-        <div data-view="signed-in" hidden>
-          <h2>You're signed in<span data-who></span></h2>
-          <form class="sh-form sh-join" data-join novalidate>
-            <label for="sh-name">Name shown in the room</label>
-            <input id="sh-name" name="name" type="text" maxlength="40" autocomplete="given-name" placeholder="First name" required>
-            <label class="sh-check"><input type="checkbox" name="agree" required> I'm 18 or older and I agree to the <a href="/terms" target="_blank" rel="noopener">community rules</a>.</label>
+        <div data-view="signed-in" class="sh-signed" hidden>
+          <div class="sh-signed-head">
+            <h2>You're signed in</h2>
+            <p class="sh-who"><span data-who></span> · <button type="button" class="linklike" data-signout>Sign out</button></p>
+          </div>
+          <div class="sh-signed-grid">
+            <form class="sh-form sh-join" data-join novalidate>
+              <label for="sh-name">Name shown in the room</label>
+              <input id="sh-name" name="name" type="text" maxlength="40" autocomplete="given-name" placeholder="First name" required>
+              <label class="sh-check"><input type="checkbox" name="agree" required><span>I'm 18 or older and I agree to the <a href="/terms" target="_blank" rel="noopener">community rules</a>.</span></label>
+              <button class="btn" type="submit" data-join-button>Enter the Study Hall</button>
+              <p class="form-note" data-join-note role="status" aria-live="polite"></p>
+            </form>
             <p class="sh-assure"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg><span><strong>Your session is private.</strong> Our servers verify your sign-in and issue you a private pass for this session only. Only members in the room can see your camera. Video is encrypted and never recorded, and you can turn your camera off or leave anytime.</span></p>
-            <button class="btn" type="submit" data-join-button>Enter the Study Hall</button>
-          </form>
-          <p class="form-note" data-join-note role="status" aria-live="polite"></p>
-          <p class="sh-signout"><button type="button" class="linklike" data-signout>Sign out</button></p>
+          </div>
         </div>
       </div>
 

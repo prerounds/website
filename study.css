@@ -21,17 +21,21 @@
 .sh-privacy li svg { width: 18px; height: 18px; flex: none; margin-top: 2px; fill: none; stroke: var(--orchid-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .sh-privacy strong { color: var(--ink); font-family: var(--display); font-weight: 800; }
 .sh-assure strong { color: var(--ink); font-family: var(--display); font-weight: 800; }
-.sh-assure { display: flex; gap: 10px; align-items: flex-start; background: #fff; border-radius: 12px; padding: 12px 14px; font-size: .98rem; color: var(--ink-soft); }
+.sh-assure { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin: 0; font-size: .95rem; line-height: 1.55; color: var(--ink-soft); }
 .sh-assure svg { width: 20px; height: 20px; flex: none; margin-top: 2px; fill: none; stroke: var(--orchid-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .sh-access { margin-top: 18px; background: var(--mist); border: 0; }
 .sh-form { margin-top: 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; max-width: 640px; }
 .sh-form input[type="email"], .sh-form input[type="text"] { min-height: 56px; }
-.sh-join { grid-template-columns: 1fr; max-width: 460px; }
+.sh-join { grid-template-columns: 1fr; max-width: none; margin-top: 0; gap: 10px; }
+.sh-signed-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
+.sh-who { color: var(--ink-soft); font-size: .95rem; overflow-wrap: anywhere; }
+.sh-signed-grid { margin-top: 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.sh-join .form-note:empty { display: none; }
+.pv-toggle { display: none; }
 .sh-join label { font-family: var(--display); font-weight: 700; font-size: .95rem; }
 .sh-join .btn { justify-self: start; }
-.sh-check { display: flex; gap: 10px; align-items: flex-start; font-family: var(--text) !important; font-weight: 400 !important; font-size: 1rem !important; }
+.sh-check { display: flex; gap: 10px; align-items: flex-start; line-height: 1.45; font-family: var(--text) !important; font-weight: 400 !important; font-size: 1rem !important; }
 .sh-check input { width: 20px; height: 20px; min-height: 0; margin-top: 3px; flex: none; accent-color: var(--orchid-ink); }
-.sh-signout { margin-top: 10px; }
 .linklike { background: none; border: 0; padding: 0; color: var(--orchid-ink); text-decoration: underline; cursor: pointer; font: inherit; font-size: .95rem; }
 .sh-rules { margin-top: 28px; }
 .sh-rules h2 { font-size: 1.3rem; }
@@ -78,10 +82,33 @@
 .sh-toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 @media (max-width: 760px) {
-  .sh-privacy ul { grid-template-columns: 1fr; }
+  .study-page { padding-top: 8px; }
+  .sh-intro h1 { font-size: 2.1rem; line-height: 1.08; }
+  .sh-intro .page-lede { font-size: 1.08rem; margin-top: 12px; }
+  .sh-grid { margin-top: 22px; gap: 12px; }
+  .sh-card { padding: 18px; border-radius: 18px; }
+  .sh-card h2 { font-size: 1.15rem; }
+  .sh-sessions { font-size: 1.02rem; }
+  .sh-how ol { font-size: .95rem; gap: 6px; }
+  .sh-privacy { padding: 18px; margin-top: 12px; }
+  .sh-privacy-head h2 { font-size: 1.08rem; }
+  .sh-privacy-head p { font-size: .9rem; }
+  .sh-privacy ul { grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
+  .sh-privacy li { font-size: .92rem; }
+  .sh-privacy .pv-more { display: none; }
+  .sh-privacy.open .pv-more { display: inline; }
+  .sh-privacy.open ul { gap: 12px; }
+  .pv-toggle { display: inline-block; margin-top: 12px; background: none; border: 0; padding: 0; cursor: pointer; font-family: var(--display); font-weight: 800; font-size: .92rem; color: var(--orchid-ink); text-decoration: underline; }
+  .sh-access { margin-top: 12px; }
+  .sh-signed-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 12px; }
+  .sh-signed-head h2 { font-size: 1.15rem; }
+  .sh-assure { padding: 14px; font-size: .9rem; order: -1; }
+  .sh-rules { margin-top: 22px; }
+  .sh-rules h2 { font-size: 1.1rem; }
+  .sh-rules ul { font-size: .95rem; }
   .sh-grid { grid-template-columns: 1fr; }
   .sh-form { grid-template-columns: 1fr; }
-  .sh-form .btn { justify-self: stretch; }
+  .sh-form .btn { justify-self: stretch; width: 100%; }
   .sh-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sh-tiles[data-count="1"] { grid-template-columns: 1fr; }
   .sh-room { padding: 12px; border-radius: 18px; }
