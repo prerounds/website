@@ -59,15 +59,11 @@ document.querySelectorAll("form.waitlist").forEach((form) => {
       setNote(form, "Enter a valid email address, like name@school.edu.", "is-error");
       return;
     }
-    if (!stage.value) {
-      stage.setAttribute("aria-invalid", "true");
-      stage.focus();
-      setNote(form, "Choose where you are now so we can match you well.", "is-error");
-      return;
-    }
 
     const where = form.dataset.source || "site";
-    const body = { email: emailValue, stage: stage.value, source: (campaign ? `${campaign}|${where}` : where).slice(0, 100) };
+    // Stage is optional; when skipped we store "other" and tag the source so it can be told apart.
+    const tag = stage.value ? where : `${where}-nostage`;
+    const body = { email: emailValue, stage: stage.value || "other", source: (campaign ? `${campaign}|${tag}` : tag).slice(0, 100) };
     if (name && name.value.trim()) body.first_name = name.value.trim().slice(0, 80);
     if (form.hasAttribute("data-prefs")) body.preferences = readPrefs();
 

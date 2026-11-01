@@ -37,7 +37,8 @@
       <div class="hero-copy">
         <p class="launch-pill"><span class="dot" aria-hidden="true"></span>Founding beta opens December 2026</p>
         <h1>The study room for future doctors.</h1>
-        <p class="lede">A virtual study room where future physicians work together on camera, from wherever they are. Pick a floor or book a room, and get matched to how you study.</p>
+        <p class="lede lede-long">A virtual study room where future physicians work together on camera, from wherever they are. Pick a floor or book a room, and get matched to how you study.</p>
+        <p class="lede lede-short">Study on camera with other future doctors, matched to how you study. Free, with no card, ever.</p>
         <ul class="perks" aria-label="Highlights">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>100% free</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No card, ever</li>
@@ -49,8 +50,8 @@
             <label class="visually-hidden" for="hero-email">Email</label>
             <input id="hero-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
             <label class="visually-hidden" for="hero-stage">Your stage</label>
-            <select id="hero-stage" name="stage" required>
-              <option value="" selected disabled>Your stage</option>
+            <select id="hero-stage" name="stage" >
+              <option value="" selected>Your stage (optional)</option>
               <option value="undergrad">Undergraduate</option>
               <option value="postbacc">Post-bacc</option>
               <option value="grad">Master's or graduate program</option>
@@ -144,8 +145,8 @@
           <label class="visually-hidden" for="build-email">Email</label>
           <input id="build-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
           <label class="visually-hidden" for="build-stage">Your stage</label>
-          <select id="build-stage" name="stage" required>
-            <option value="" selected disabled>Your stage</option>
+          <select id="build-stage" name="stage" >
+            <option value="" selected>Your stage (optional)</option>
             <option value="undergrad">Undergraduate</option>
             <option value="postbacc">Post-bacc</option>
             <option value="grad">Master's or graduate program</option>
@@ -309,9 +310,9 @@
           <input id="join-email" name="email" type="email" autocomplete="email" required>
         </div>
         <div class="field">
-          <label for="join-stage">Where you are now</label>
-          <select id="join-stage" name="stage" required>
-            <option value="" selected disabled>Select one</option>
+          <label for="join-stage">Where you are now <span class="opt">optional</span></label>
+          <select id="join-stage" name="stage" >
+            <option value="" selected>Select one</option>
             <option value="undergrad">Undergraduate</option>
             <option value="postbacc">Post-bacc</option>
             <option value="grad">Master's or graduate program</option>
