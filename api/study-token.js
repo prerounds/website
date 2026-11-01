@@ -59,9 +59,14 @@ export default async function handler(req, res) {
 
   // 4. Register them with Stream and issue a short-lived token.
   const stream = new StreamClient(STREAM_API_KEY, STREAM_API_SECRET);
-  await stream.upsertUsers([{ id: userId, name, role: isHost ? "admin" : "user" }]);
-  const call = stream.video.call(CALL_TYPE, CALL_ID);
-  await call.getOrCreate({ data: { created_by_id: userId } });
+  try {
+    await stream.upsertUsers([{ id: userId, name, role: isHost ? "admin" : "user" }]);
+    const call = stream.video.call(CALL_TYPE, CALL_ID);
+    await call.getOrCreate({ data: { created_by_id: userId } });
+  } catch (err) {
+    console.error("Stream setup failed:", err?.message || err);
+    return res.status(502).json({ error: "The video room isn't reachable right now. Please try again in a minute." });
+  }
 
   const validity = (session ? session.minutesLeft + 30 : 180) * 60;
   const token = stream.generateUserToken({ user_id: userId, validity_in_seconds: validity });
