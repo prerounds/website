@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PreRounds//Study Hall//EN
+CALSCALE:G
+ REGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PreRounds Study Hall
+BEGIN:VTIMEZONE
+ 
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+ 
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+ 
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:E
+ ST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STA
+ NDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:studyhall-thu-am@prerounds.org
+DTSTA
+ MP:20261102T020000Z
+DTSTART;TZID=America/New_York:20261105T090000
+DTEND;T
+ ZID=America/New_York:20261105T110000
+RRULE:FREQ=WEEKLY;BYDAY=TH
+SUMMARY:P
+ reRounds Study Hall (morning)
+DESCRIPTION:Free silent study session for f
+ uture doctors. Cameras on, micr
+ ophones off, shared 50/10 focus timer. D
+ oors open 10 minutes early. Join 
+ at https://prerounds.org/study
+LOCATIO
+ N:https://prerounds.org/study
+URL:https://prerounds.org/study
+BEGIN:VALAR
+ M
+ACTION:DISPLAY
+DESCRIPTION:PreRounds Study Hall (morning) starts in 15 
+ minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:studyhall-t
+ hu-pm@prerounds.org
+DTSTAMP:20261102T020000Z
+DTSTART;TZID=America/New_Yor
+ k:20261105T200000
+DTEND;TZID=America/New_York:20261105T220000
+RRULE:FREQ=
+ WEEKLY;BYDAY=TH
+SUMMARY:PreRounds Study Hall (night)
+DESCRIPTION:Free sil
+ ent study session for future doctors. Cameras on, micr
+ ophones off, shar
+ ed 50/10 focus timer. Doors open 10 minutes early. Join 
+ at https://prer
+ ounds.org/study
+LOCATION:https://prerounds.org/study
+URL:https://preround
+ s.org/study
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PreRounds Study Hall 
+ (night) starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCA
+ LENDAR

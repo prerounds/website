@@ -22,6 +22,8 @@ const store = {
   set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* private mode */ } },
 };
 
+const goalKey = () => `sh-goal-${new Date().toLocaleDateString("en-CA")}`;
+
 let session = null;      // Supabase session
 let client = null;       // Stream client
 let call = null;         // Stream call
@@ -68,8 +70,49 @@ function showSignedIn(s) {
     $("[data-who]").textContent = s.user.email;
     const saved = store.get("sh-name") || s.user.user_metadata?.display_name || "";
     if (saved && !$("#sh-name").value) $("#sh-name").value = saved;
+    const goal = JSON.parse(store.get(goalKey()) || "{}").text;
+    if (goal && !$("#sh-join-goal").value) $("#sh-join-goal").value = goal;
+    loadReminder(s);
   }
 }
+
+// ---------- Night-before reminder emails ----------
+const remindBox = $("[data-remind]");
+const remindNote = $("[data-remind-note]");
+let remindLoadedFor = null;
+async function loadReminder(s) {
+  if (remindLoadedFor === s.user.id) return;
+  remindLoadedFor = s.user.id;
+  try {
+    const res = await fetch("/api/reminders", { headers: { Authorization: `Bearer ${s.access_token}` } });
+    if (res.status === 503) { $(".sh-remind").hidden = true; return; }
+    const body = await res.json();
+    $("[data-remind]").checked = !!body.on;
+  } catch { /* leave unchecked */ }
+}
+remindBox.addEventListener("change", async () => {
+  const on = remindBox.checked;
+  remindBox.disabled = true;
+  remindNote.className = "form-note";
+  remindNote.textContent = "Saving…";
+  try {
+    const { data } = await supabase.auth.getSession();
+    const res = await fetch("/api/reminders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${data.session?.access_token}` },
+      body: JSON.stringify({ on }),
+    });
+    if (!res.ok) throw new Error();
+    remindNote.textContent = on ? "You're set. Watch for our email on Wednesday evening." : "Reminders are off.";
+    remindNote.className = "form-note is-success";
+  } catch {
+    remindBox.checked = !on;
+    remindNote.textContent = "Couldn't save that. Please try again.";
+    remindNote.className = "form-note is-error";
+  } finally {
+    remindBox.disabled = false;
+  }
+});
 
 supabase.auth.onAuthStateChange((_event, s) => showSignedIn(s));
 supabase.auth.getSession().then(({ data }) => showSignedIn(data.session));
@@ -111,6 +154,11 @@ $("[data-join]").addEventListener("submit", async (e) => {
   if (!name) { note.textContent = "Add the name others will see."; note.className = "form-note is-error"; return; }
   if (!e.target.agree.checked) { note.textContent = "Please confirm you're 18+ and agree to the rules."; note.className = "form-note is-error"; return; }
   store.set("sh-name", name);
+  const goal = e.target.goal.value.trim();
+  if (goal) {
+    const prev = JSON.parse(store.get(goalKey()) || "{}");
+    store.set(goalKey(), JSON.stringify({ text: goal, done: prev.text === goal ? !!prev.done : false }));
+  }
   supabase.auth.updateUser({ data: { display_name: name } }).catch(() => {});
 
   const button = $("[data-join-button]");
@@ -170,6 +218,7 @@ async function enterRoom() {
   unsubscribers.push({ unsubscribe: offKick });
 
   restoreGoal();
+  $(".sh-goal").classList.toggle("needs-goal", !$("[data-goal]").value.trim());
   startBlockTimer();
 }
 
@@ -251,22 +300,31 @@ function startBlockTimer() {
       return;
     }
     const inCycle = secs % 3600;
-    if (inCycle < 3000) { label.textContent = "Focus block"; out.textContent = `${fmt(3000 - inCycle)} left`; }
+    const phase = inCycle < 3000 ? "focus" : "break";
+    if (phase === "focus") { label.textContent = "Focus block"; out.textContent = `${fmt(3000 - inCycle)} left`; }
     else { label.textContent = "Break"; out.textContent = `${fmt(3600 - inCycle)} left`; }
+    if (lastPhase && phase !== lastPhase) {
+      const goal = $("[data-goal]").value.trim();
+      showToast(phase === "break"
+        ? (goal ? `Break time. 10 minutes. How's "${goal}" going?` : "Break time. 10 minutes. Stretch and look away from the screen.")
+        : "New focus block. 50 minutes. You've got this.");
+    }
+    lastPhase = phase;
   };
+  let lastPhase = null;
   tick();
   blockTimer = setInterval(tick, 1000);
 }
 const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
 // ---------- Goal (private to you, shown on your tile) ----------
-const goalKey = () => `sh-goal-${new Date().toISOString().slice(0, 10)}`;
 function restoreGoal() {
   const saved = JSON.parse(store.get(goalKey()) || "{}");
   $("[data-goal]").value = saved.text || "";
   setGoalDone(!!saved.done);
 }
 function saveGoal() {
+  $(".sh-goal").classList.toggle("needs-goal", !$("[data-goal]").value.trim());
   store.set(goalKey(), JSON.stringify({ text: $("[data-goal]").value.trim(), done: $("[data-goal-done]").getAttribute("aria-pressed") === "true" }));
   renderGoalOnTile();
 }
