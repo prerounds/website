@@ -1,12 +1,13 @@
 # Supabase's free plan pauses a project after about a week without activity,
-# which stops the waitlist form from saving signups. This pings the database
-# every three days so that never happens. It only reads (and the public key
-# can't read the list), so it changes nothing.
+# which stops the waitlist form and the Study Hall sign-in from working.
+# This runs a tiny real query (select 1) every two days so the project stays
+# active. It reads nothing and changes nothing. If the database ever stops
+# answering, this job fails, so GitHub emails a warning.
 name: Keep database awake
 
 on:
   schedule:
-    - cron: "17 14 */3 * *"
+    - cron: "17 14 */2 * *"
   workflow_dispatch:
 
 jobs:
@@ -15,8 +16,9 @@ jobs:
     steps:
       - name: Ping Supabase
         run: |
-          status=$(curl -s -o /dev/null -w "%{http_code}" \
-            "https://chhkoajmaxjweugakhzm.supabase.co/rest/v1/waitlist?select=id&limit=1" \
-            -H "apikey: sb_publishable_Oj-bEfguqOrt-5N-9pILLw_jhTFdI2r")
+          status=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            "https://chhkoajmaxjweugakhzm.supabase.co/rest/v1/rpc/keep_alive" \
+            -H "apikey: sb_publishable_Oj-bEfguqOrt-5N-9pILLw_jhTFdI2r" \
+            -H "Content-Type: application/json" -d '{}')
           echo "Supabase responded with HTTP $status"
-          test "$status" -lt 500
+          test "$status" -eq 200
